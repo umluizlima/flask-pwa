@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+<header>
+  <h1><a href="/">{{ title }}</a></h1>
+</header>
+
+<main>
+  {% block main %}{% endblock %}
+</main>
+
+<footer>
+  <p>available on <a href="https://github.com/umluizlima/flask-pwa" target="_blank" rel="noopener">GitHub</a></p>
+</footer>
+{% endblock %}
