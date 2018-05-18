@@ -11,6 +11,7 @@ Flask-SQLAlchemy = "*"
 Flask-Migrate = "*"
 "psycopg2" = "*"
 Flask-SSLify = "*"
+flask-sslify = "*"
 
 [dev-packages]
 

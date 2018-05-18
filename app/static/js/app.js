@@ -23,7 +23,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   console.log('beforeinstallprompt event fired');
   e.preventDefault();
   deferredPrompt = e;
-  btnAdd.style.display = 'block';
+  btnAdd.style.visibility = 'visible';
 });
 
 btnAdd.addEventListener('click', (e) => {
