@@ -1,6 +1,6 @@
 :root {
     --dark-primary-color: #111111;
-    --default-primary-color: #222222;
+    --default-primary-color: #555555;
     --light-primary-color: #D7CCC8;
     --text-color: #FFFFFF;
     --accent-color: chartreuse;
@@ -9,52 +9,118 @@
     --divider-color: #BDBDBD;
 }
 
-html {
-  box-sizing: border-box;
-  height: 100%;
-}
-
 *, *:before, *:after {
-  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
+  background-color: var(--divider-color);
   display: flex;
   flex-direction: column;
   height: 100vh;
   font-family: OpenSans, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--divider-color);
 }
 
-header {
+body > * {
   flex-shrink: 0;
-  background-color: var(--dark-primary-color);
-  color: var(--text-color);
-  padding: .5rem 1rem;
-  text-align: center;
-}
-
-main {
-  flex: 1 0 auto;
   width: 100%;
-  margin: 0 auto;
-  padding: 50px;
-  background-color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-footer {
-  flex-shrink: 0;
+body > header {
   background-color: var(--dark-primary-color);
   color: var(--text-color);
   padding: .5rem 1rem;
   text-align: center;
+}
+
+body > main {
+  background-color: var(--divider-color);
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 15px;
+}
+
+body > footer {
+  background-color: var(--dark-primary-color);
+  color: var(--text-color);
+  padding: .5rem 1rem;
+  text-align: center;
+}
+
+article {
+  background-color: var(--text-color);
+  box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+article > header {
+
+}
+
+article > main {
+
+}
+
+article > footer {
+  padding: 10px;
+  margin: 0 30px;
+  text-align: center;
+  border-top: 1px solid #efefef;
+}
+
+#btnAdd {
+  background-color: var(--dark-primary-color);
+  border: 1px solid var(--dark-primary-color);
+  color: var(--text-color);
+  display: inline-block;
+  visibility: hidden;
+  text-decoration: none;
+  font-weight: 600;
+  padding: .5rem 1rem;
+  margin: 0 auto;
+}
+
+article h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+article span {
+  margin: 0 0 15px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+article p {
+  padding: 20px 0;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+article > main {
+  padding: 30px 30px;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  margin: auto;
+}
+
+hr {
+  width: 75%;
 }
 
 footer a {
@@ -75,5 +141,9 @@ a:hover {
     max-width: 800px;
     margin: 20px auto;
     border-radius: 10px;
+  }
+  img {
+    max-width: 100%;
+    height: 200px;
   }
 }
