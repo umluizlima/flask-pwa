@@ -1,49 +1,53 @@
-const cacheName = 'Flask';
+console.log('Hello from sw.js');
 
-self.addEventListener('install', e => {
-  console.log('[ServiceWorker] Install');
-  const timeStamp = Date.now();
-  e.waitUntil(
-    caches.open(cacheName).then(cache => {
-      console.log('[ServiceWorker] Caching app shell');
-      return cache.addAll([
-        '/',
-        '/static/js/app.js',
-        '/static/css/style.css'
-      ])
-      .then(() => {
-        console.log('[ServiceWorker] Successfully cached');
-        self.skipWaiting()
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-    })
-  );
-});
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.2.0/workbox-sw.js');
 
-self.addEventListener('activate', event => {
-  console.log('[ServiceWorker] Activate');
-  event.waitUntil(
-    caches.keys().then(function(keyList) {
-      return Promise.all(keyList.map(function(key) {
-        if (key !== cacheName) {
-          console.log('[ServiceWorker] Removing old cache', key);
-          return caches.delete(key);
-        }
-      }));
-    })
-  );
-  return self.clients.claim();
-});
+if (workbox) {
+  console.log(`Yay! Workbox is loaded 🎉`);
+} else {
+  console.log(`Boo! Workbox didn't load 😬`);
+}
 
-self.addEventListener('fetch', event => {
-  console.log('[ServiceWorker] Fetch', event.request.url);
-  event.respondWith(
-    caches.open(cacheName)
-      .then(cache => cache.match(event.request, {ignoreSearch: true}))
-      .then(response => {
-      return response || fetch(event.request);
-    })
-  );
-});
+workbox.routing.registerRoute(
+  '/',
+  workbox.strategies.staleWhileRevalidate({
+    cacheName: 'pages',
+    plugins: [
+      new workbox.cacheableResponse.Plugin({
+        statuses: [0, 200]
+      }),
+    ],
+  }),
+);
+
+workbox.routing.registerRoute(
+  /\.(?:js|css)$/,
+  workbox.strategies.staleWhileRevalidate({
+    cacheName: 'static-resources',
+  }),
+);
+
+workbox.routing.registerRoute(
+  /\.(?:png|gif|jpg|jpeg|svg)$/,
+  workbox.strategies.cacheFirst({
+    cacheName: 'images',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 60,
+        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+      }),
+    ],
+  }),
+);
+
+workbox.routing.registerRoute(
+  new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
+  workbox.strategies.cacheFirst({
+    cacheName: 'googleapis',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 30,
+      }),
+    ],
+  }),
+);
