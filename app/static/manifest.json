@@ -1,6 +1,7 @@
 {
   "name": "Flask-PWA",
   "short_name": "Flask-PWA",
+  "description": "A progressive webapp template, built with Flask.",
   "icons": [
     {
       "src": "images/icons/icon-128x128.png",
