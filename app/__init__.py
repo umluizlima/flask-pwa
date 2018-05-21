@@ -12,7 +12,6 @@ def create_app():
 
     try:
         os.makedirs(app.instance_path)
-        os.makedirs(os.path.join(app.instance_path, 'vcf'))
     except OSError:
         pass
 
