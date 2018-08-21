@@ -1,8 +1,24 @@
 {
   "name": "Flask-PWA",
   "short_name": "Flask-PWA",
-  "description": "A progressive webapp template, built with Flask.",
+  "description": "A progressive webapp template built with Flask",
+  "theme_color": "transparent",
+  "background_color": "transparent",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
+    {
+      "src": "images/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
     {
       "src": "images/icons/icon-128x128.png",
       "sizes": "128x128",
@@ -24,8 +40,8 @@
       "type": "image/png"
     },
     {
-      "src": "images/icons/icon-256x256.png",
-      "sizes": "256x256",
+      "src": "images/icons/icon-384x384.png",
+      "sizes": "384x384",
       "type": "image/png"
     },
     {
@@ -33,11 +49,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "start_url": "/",
-  "scope": "/",
-  "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "transparent",
-  "theme_color": "transparent"
+  ]
 }
