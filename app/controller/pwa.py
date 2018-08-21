@@ -7,9 +7,7 @@ bp = Blueprint('pwa', __name__, url_prefix='')
 
 @bp.route('/manifest.json')
 def manifest():
-    response = make_response(send_from_directory('static', 'manifest.json'))
-    response.headers['Cache-Control'] = 'no-cache'
-    return response
+    return send_from_directory('static', 'manifest.json')
 
 
 @bp.route('/sw.js')
