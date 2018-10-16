@@ -12,6 +12,22 @@ You can check a live version at [Heroku](https://flask-pwa.herokuapp.com).
 * Off-the-shelf progressive web app behaviour
 * Service worker based on Workbox
 
+## Installation
+
+```shell
+> git clone https://github.com/umluizlima/flask-pwa
+> cd flask-pwa
+> pipenv install
+```
+
+## Usage
+
+```shell
+> pipenv run flask run
+```
+
+The application should run on localhost.
+
 ## Links
 
 - Repository: https://github.com/umluizlima/flask-pwa
