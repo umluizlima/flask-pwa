@@ -22,11 +22,22 @@ You can check a live version at [Heroku](https://flask-pwa.herokuapp.com).
 
 ## Usage
 
+Due to the current Service Worker [specification](https://w3c.github.io/ServiceWorker/#secure-context), the web browser will only allow its registration if the application is served over **https, or on localhost** for development purposes.
+
+This makes **nGrok** useful for testing the PWA functionality, as it allows you to expose localhost over the internet with **https** included.
+
+### localhost
+
 ```shell
 > pipenv run flask run
 ```
 
-The application should run on localhost.
+### nGrok
+
+```shell
+> pipenv run flask run
+> ngrok http 80
+```
 
 ## Links
 
