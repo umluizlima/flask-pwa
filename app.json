@@ -1,0 +1,20 @@
+{
+    "name": "flask-pwa",
+    "repository": "https://github.com/umluizlima/flask-pwa",
+    "env": {
+        "SECRET_KEY": {
+            "description": "Secret key for Flask.",
+            "value": "you-will-never-guesss"
+        },
+        "FLASK_ENV": {
+            "description": "Environment for Flask",
+            "value": "production"
+        }
+    },
+    "formation": {
+        "web": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
