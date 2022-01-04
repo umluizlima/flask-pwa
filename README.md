@@ -5,6 +5,9 @@ Flask PWA is supposed to be a goto template when I start a new Flask project. It
 
 You can check a live version at [Heroku](https://flask-pwa.herokuapp.com).
 
+## Requirements
+- [Python 3.10.0](https://realpython.com/intro-to-pyenv/)
+
 ## Features
 
 * Blueprint oriented, Flask 1.0 project
@@ -17,7 +20,8 @@ You can check a live version at [Heroku](https://flask-pwa.herokuapp.com).
 ```shell
 > git clone https://github.com/umluizlima/flask-pwa
 > cd flask-pwa
-> pipenv install
+> make environment
+> make install
 ```
 
 ## Usage
@@ -29,15 +33,23 @@ This makes **nGrok** useful for testing the PWA functionality, as it allows you 
 ### localhost
 
 ```shell
-> pipenv run flask run
+> make run
 ```
 
 ### nGrok
 
 ```shell
-> pipenv run flask run
+> make flask run
 > ngrok http 80
 ```
+
+## Deployment
+
+### Heroku
+
+The `app.json`, `Procfile`, and `runtime.txt` files on this repository are specific for deployment on [Heroku](https://www.heroku.com). It can be done by clicking the following button:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Links
 
