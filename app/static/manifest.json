@@ -1,7 +1,7 @@
 {
-  "name": "Flask-PWA",
-  "short_name": "Flask-PWA",
-  "description": "A progressive webapp template built with Flask",
+  "name": "JoySeb",
+  "short_name": "JoySeb",
+  "description": "We say yes",
   "theme_color": "transparent",
   "background_color": "transparent",
   "display": "standalone",

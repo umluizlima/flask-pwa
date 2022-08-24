@@ -1,6 +1,6 @@
 {
-    "name": "flask-pwa",
-    "repository": "https://github.com/umluizlima/flask-pwa",
+    "name": "joyseb",
+    "repository": "https://github.com/seduerr91/assistant",
     "env": {
         "SECRET_KEY": {
             "description": "Secret key for Flask.",
